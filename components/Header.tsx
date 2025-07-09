@@ -3,7 +3,6 @@
 import { ClerkLoaded, SignInButton, UserButton, useUser } from '@clerk/nextjs';
 import Link from 'next/link';
 import Form from 'next/form'
-import React from 'react'
 import { TrolleyIcon } from '@sanity/icons'
 
 function Header() {

@@ -50,7 +50,7 @@ export type Product = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  title?: string;
+  name?: string;
   slug?: Slug;
   image?: {
     asset?: {
@@ -292,7 +292,7 @@ export type ALL_PRODUCTS_QUERYResult = Array<{
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  title?: string;
+  name?: string;
   slug?: Slug;
   image?: {
     asset?: {
