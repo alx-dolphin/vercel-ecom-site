@@ -1,3 +1,5 @@
+// This is what powers the live content api, so when changes are made in the CMS/studio, 
+// the changes are reflected in the site instance (local or live)
 // https://github.com/sanity-io/next-sanity#live-content-api 
 
 import "server-only";
