@@ -42,7 +42,7 @@ function Header() {
 					 '/>
 				</Form>
 				<div className='flex items-center space-x-4 mt-4 sm:mt-0 flex-1 sm:flex-none'>
-					<Link href="/basket" className='
+					<Link href="/cart" className='
 						flex-1 
 						relative 
 						flex 
