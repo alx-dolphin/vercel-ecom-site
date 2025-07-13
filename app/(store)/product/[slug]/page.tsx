@@ -13,7 +13,7 @@ async function ProductPage({ params}: { params: Promise<{slug:string}>}) {
         return notFound();
     }
 
-    //Make hook for this ?
+    // Make hook for this ? (used in two places)
     const isOutOfStock = !product.stock || product.stock <= 0;
 
     return (
