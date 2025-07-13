@@ -40,7 +40,7 @@ function ProductThumbnail({product}: { product: Product }) {
             )}
         </div>
         <div className="p-4">
-            <h2 className="text-lg font-semibold text-gray-900 truncate">
+            <h2 className="text-md font-semibold text-black truncate">
                 {product.name}
             </h2>
             
@@ -54,7 +54,7 @@ function ProductThumbnail({product}: { product: Product }) {
                 .join("") || "No description available"
                 }
             </p>
-            <p className="mt-2 text-lg font-bold text-gray-900">
+            <p className="mt-2 text-sm font-medium text-gray-900">
                 £{product.price?.toFixed(2)}
             </p>
         </div>
