@@ -13,7 +13,7 @@ async function SearchPage({
         return (
             <div className="flex flex-col items-center justify-top min-h-screen bg-gray-100 p-4"> 
                 <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-4xl">
-                    <h1 className="text-3xl font-bold mb-6 text-center">No results for {query}</h1>
+                    <h1 className="text-2xl font-bold mb-6 text-center">No results for &quot;{query}&quot;</h1>
                     <p className="text-gray-600 text-center">
                         No products found matching your search. Try again with a different search term.
                     </p>
@@ -24,8 +24,8 @@ async function SearchPage({
     return (
         <div className="flex flex-col items-center justify-top min-h-screen bg-gray-100 p-4">
             <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-4xl">
-                <h1 className="text-3xl font-bold mb-6 text-center">
-                    Search Results for {query}
+                <h1 className="text-2xl font-semibold mb-6 text-center">
+                    Search Results for &quot;{query}&quot;
                 </h1>
                 <ProductsGrid products={products} />
             </div>

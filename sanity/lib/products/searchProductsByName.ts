@@ -3,13 +3,13 @@ import { sanityFetch } from "../live";
 
 export const searchProductsByName = async (searchparam: string) => {
 
-    const PRODUCT_SEARCH_QUERY = defineQuery(
+    const SEARCH_PRODUCTS_BY_NAME_QUERY = defineQuery(
         `*[_type == "product" && name match $searchParam] | order(name asc)`
     ); 
 
     try {
         const products = await sanityFetch({
-            query: PRODUCT_SEARCH_QUERY,
+            query: SEARCH_PRODUCTS_BY_NAME_QUERY,
             params: { searchParam: searchparam },
         });
         return products.data || [];
