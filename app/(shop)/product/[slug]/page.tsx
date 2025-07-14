@@ -3,6 +3,7 @@ import { getProductBySlug } from "@/sanity/lib/products/getProductBySlug";
 import { PortableText } from "next-sanity";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import AddToCartButton from "@/components/AddToCartButton";
 
 
 async function ProductPage({ params}: { params: Promise<{slug:string}>}) {
@@ -52,9 +53,12 @@ async function ProductPage({ params}: { params: Promise<{slug:string}>}) {
 
                     </div>
                 </div>
-                </div> 
-            </div>
+                <div className="mt-6">
+                    <AddToCartButton product={product} disabled={isOutOfStock} />
+                </div>
+            </div> 
         </div>
+    </div>
     )
 }
 

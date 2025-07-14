@@ -34,7 +34,7 @@ function ProductThumbnail({product}: { product: Product }) {
             )}
             {isOutOfStock && (
                 <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-                    <span className="text-white font-bold text-lg">Out of Stock</span> 
+                    <span className="text-gray-100 font-medium text-lg">Out of Stock</span> 
                 </div>
             )}
         </div>

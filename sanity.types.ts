@@ -64,6 +64,18 @@ export type Product = {
     crop?: SanityImageCrop;
     _type: "image";
   };
+  thumbnail?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
   description?: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -306,6 +318,18 @@ export type ALL_PRODUCTS_QUERYResult = Array<{
     crop?: SanityImageCrop;
     _type: "image";
   };
+  thumbnail?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
   description?: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -360,6 +384,18 @@ export type PRODUCT_BY_SLUG_QUERYResult = {
   name?: string;
   slug?: Slug;
   image?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  thumbnail?: {
     asset?: {
       _ref: string;
       _type: "reference";
@@ -436,6 +472,18 @@ export type PRODUCTS_BY_CATEGORY_QUERYResult = Array<{
     crop?: SanityImageCrop;
     _type: "image";
   };
+  thumbnail?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
   description?: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -490,6 +538,18 @@ export type SEARCH_PRODUCTS_BY_NAME_QUERYResult = Array<{
   name?: string;
   slug?: Slug;
   image?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  thumbnail?: {
     asset?: {
       _ref: string;
       _type: "reference";
