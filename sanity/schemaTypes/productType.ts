@@ -31,6 +31,15 @@ export const productType = defineType({
             }
         }),
         defineField({
+            // Have separate thumbnail for product grid for optimization
+            name: "thumbnail",
+            title: "Product Thumbnail",
+            type: "image",
+            options: {
+                hotspot: true,
+            }
+        }),
+        defineField({
             name: "description",
             title: "Description",
             type: "blockContent",

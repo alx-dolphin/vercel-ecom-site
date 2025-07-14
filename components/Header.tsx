@@ -9,7 +9,7 @@ function Header() {
   const { user } = useUser();
 
   return (
-    <header className='flex flex-wrap justify-between items-center px-4 py-2'>
+    <header className='sticky top-0 z-50 bg-white border-b border-gray-200 flex flex-wrap justify-between items-center px-4 py-2'>
       <div className='
 				flex 
 				w-full

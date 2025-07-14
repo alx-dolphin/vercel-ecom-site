@@ -5,7 +5,7 @@ import { imageUrl } from "@/sanity/lib/imageUrl";
 
 function ProductThumbnail({product}: { product: Product }) {
 
-  const isOutOfStock = product.stock === 0 || product.stock === undefined || product.stock === null;
+   const isOutOfStock = !product.stock || product.stock <= 0;
 
   return (
     <Link href={`/product/${product.slug?.current}`} className={`
@@ -21,7 +21,6 @@ function ProductThumbnail({product}: { product: Product }) {
         transition-all
         duration-300
         overflow-hidden
-        ${isOutOfStock ? "opacity-50 cursor-not-allowed" : ""}
     `}>
         <div className="relative aspect-square w-full h-full overflow-hidden">
             {product.image && (
@@ -34,7 +33,7 @@ function ProductThumbnail({product}: { product: Product }) {
                 />
             )}
             {isOutOfStock && (
-                <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                <div className="absolute inset-0 flex items-center justify-center bg-black/50">
                     <span className="text-white font-bold text-lg">Out of Stock</span> 
                 </div>
             )}
