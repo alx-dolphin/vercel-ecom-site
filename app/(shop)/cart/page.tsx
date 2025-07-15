@@ -13,7 +13,7 @@ import { createCheckoutSession, Metadata } from "@/actions/createCheckoutSession
 
 function CartPage() {
   const groupedItems = useCartStore((state) => state.getGroupedItems());
-  const totalPrice = useCartStore((state) => state.getTotalPrice());
+  // const totalPrice = useCartStore((state) => state.getTotalPrice());
   const {isSignedIn} = useAuth();
   const {user} = useUser();
   const router = useRouter();
@@ -47,7 +47,9 @@ function CartPage() {
         customerEmail: user?.emailAddresses[0].emailAddress ?? "",
         clerkUserId: user!.id,
       };
+
       const checkoutUrl = await createCheckoutSession(groupedItems, metadata);
+
       if (checkoutUrl) {
         window.location.href = checkoutUrl;
       }
