@@ -5,6 +5,9 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import AddToCartButton from "@/components/AddToCartButton";
 
+export const dynamic = "force-static";
+export const revalidate = 60; // Revalidate at most every 60 seconds
+
 async function ProductPage({ params}: { params: Promise<{slug:string}>}) {
     const { slug } = await params;
     const product = await getProductBySlug(slug);

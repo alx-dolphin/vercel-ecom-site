@@ -44,7 +44,7 @@ export async function createCheckoutSession(items: GroupedBasketItem[], metadata
             customer_email: !customerId ? metadata.customerEmail : undefined,
             metadata,
             mode:"payment",
-            allow_promotion_codes: true,
+            allow_promotion_codes: false,
             success_url: successUrl,
             cancel_url: cancelUrl,
             line_items: items.map((item) => ({
