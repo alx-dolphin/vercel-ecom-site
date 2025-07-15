@@ -13,24 +13,31 @@ function Header() {
   return (
     <header className='sticky top-0 z-50 bg-white border-b border-gray-200 px-4 py-2'>
       <div className='flex w-full justify-between items-center'>
-        <Link href="/" className='text-2xl font-semibold text-black hover:opacity-50 cursor-pointer'>
-          GymDolphin
-        </Link>
+        <div className='flex items-center space-x-8'>
+          <Link href="/" className='text-2xl font-semibold text-black hover:opacity-70 cursor-pointer transition-opacity'>
+            GymDolphin
+          </Link>
+          <nav className='hidden md:flex'>
+            <Link href="/products" className='text-gray-800 hover:text-black font-medium transition-colors'>
+              Products
+            </Link>
+          </nav>
+        </div>
         
         <Form action="/search" className='hidden sm:flex sm:ml-auto sm:mr-4 min-w-xl'>
           <input 
             type="text" 
             name="query" 
             placeholder='Search our products' 
-            className='bg-gray-100 text-gray-800 px-4 py-2 rounded-full focus:outline-none 
-            focus:ring-1 focus:ring-grey-200 focus:ring-opacity-20 border-none w-full placeholder:text-gray-500'/>
+            className='bg-gray-100 text-gray-900 px-4 py-2 rounded-full focus:outline-none 
+            focus:ring-1 focus:ring-gray-300 border-none w-full placeholder:text-gray-500'/>
         </Form>
         
         <div className='flex items-center space-x-4'>
-          <Link href="/cart" className='relative flex justify-center items-center space-x-2 text-black font-bold py-2 px-2'>
+          <Link href="/cart" className='relative flex justify-center items-center space-x-2 text-black font-bold py-2 px-2 hover:opacity-70 transition-opacity'>
             <TrolleyIcon className="w-7 h-7" />
-            <span className="absolute -top-0.5 -right-0.5 bg-red-500 text-white rounded-full 
-            w-5 h-5 flex items-center justify-center text-xs">
+            <span className="absolute -top-0.5 -right-0.5 bg-black text-white rounded-full 
+            w-5 h-5 flex items-center justify-center text-xs font-semibold">
               {itemCount}
             </span>
           </Link>
@@ -58,8 +65,8 @@ function Header() {
           type="text" 
           name="query" 
           placeholder='Search our products' 
-          className='bg-gray-100 text-gray-800 px-4 py-2 rounded-full focus:outline-none 
-          focus:ring-1 focus:ring-grey-500 focus:ring-opacity-50 border-none w-full placeholder:text-gray-500'/>
+          className='bg-gray-100 text-gray-900 px-4 py-2 rounded-full focus:outline-none 
+          focus:ring-1 focus:ring-gray-300 border-none w-full placeholder:text-gray-500'/>
       </Form>
     </header>
   )

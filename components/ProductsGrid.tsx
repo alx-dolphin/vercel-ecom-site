@@ -8,9 +8,7 @@ function ProductsGrid({products}: { products: Product[]}) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mt-4">
             {products.map((product) => {
                 return (
-                    <div key={product._id} className="flex justify-center">
-                        <ProductThumbnail product={product} />
-                    </div>
+                    <ProductThumbnail key={product._id} product={product} />
                 );
             })}
         </div>

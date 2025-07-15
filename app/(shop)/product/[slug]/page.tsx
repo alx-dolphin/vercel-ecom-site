@@ -20,7 +20,7 @@ async function ProductPage({ params}: { params: Promise<{slug:string}>}) {
     const isOutOfStock = !product.stock || product.stock <= 0;
 
     return (
-        <div className="container mx-auto px-4 py-8">
+        <div className="container max-w-7xl mx-auto px-4 py-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                <div className={`relative aspect-square overflow-hidden rounded-lg shadow-lg 
                 ${isOutOfStock ? "opacity-50" : ""}`}

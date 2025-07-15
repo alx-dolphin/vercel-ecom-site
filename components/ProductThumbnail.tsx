@@ -12,6 +12,7 @@ function ProductThumbnail({product}: { product: Product }) {
         group
         flex
         flex-col
+        w-full
         bg-white
         rounded-lg
         border
@@ -22,7 +23,7 @@ function ProductThumbnail({product}: { product: Product }) {
         duration-300
         overflow-hidden
     `}>
-        <div className="relative aspect-square w-full h-full overflow-hidden">
+        <div className="relative aspect-square w-full overflow-hidden">
             {product.image && (
                 <Image
                     className="object-contain transition-transform duration-300 group-hover:scale-105"
