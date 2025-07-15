@@ -22,19 +22,22 @@ function Header() {
             type="text" 
             name="query" 
             placeholder='Search our products' 
-            className='bg-gray-100 text-gray-800 px-4 py-2 rounded-full focus:outline-none focus:ring-1 focus:ring-grey-200 focus:ring-opacity-20 border-none w-full placeholder:text-gray-500'/>
+            className='bg-gray-100 text-gray-800 px-4 py-2 rounded-full focus:outline-none 
+            focus:ring-1 focus:ring-grey-200 focus:ring-opacity-20 border-none w-full placeholder:text-gray-500'/>
         </Form>
         
         <div className='flex items-center space-x-4'>
           <Link href="/cart" className='relative flex justify-center items-center space-x-2 text-black font-bold py-2 px-2'>
             <TrolleyIcon className="w-7 h-7" />
-            <span className="absolute -top-0.5 -right-0.5 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+            <span className="absolute -top-0.5 -right-0.5 bg-red-500 text-white rounded-full 
+            w-5 h-5 flex items-center justify-center text-xs">
               {itemCount}
             </span>
           </Link>
           <ClerkLoaded>
             {user && (
-              <Link href="/orders" className='relative flex justify-center items-center space-x-2 text-black font-bold py-2 px-2'>
+              <Link href="/orders" className='relative flex justify-center items-center space-x-2
+               text-black font-bold py-2 px-2'>
                 <ClipboardIcon className="w-7 h-7" />
               </Link>
             )}
@@ -55,7 +58,8 @@ function Header() {
           type="text" 
           name="query" 
           placeholder='Search our products' 
-          className='bg-gray-100 text-gray-800 px-4 py-2 rounded-full focus:outline-none focus:ring-1 focus:ring-grey-500 focus:ring-opacity-50 border-none w-full placeholder:text-gray-500'/>
+          className='bg-gray-100 text-gray-800 px-4 py-2 rounded-full focus:outline-none 
+          focus:ring-1 focus:ring-grey-500 focus:ring-opacity-50 border-none w-full placeholder:text-gray-500'/>
       </Form>
     </header>
   )

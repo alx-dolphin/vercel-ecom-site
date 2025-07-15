@@ -5,7 +5,6 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import AddToCartButton from "@/components/AddToCartButton";
 
-
 async function ProductPage({ params}: { params: Promise<{slug:string}>}) {
     const { slug } = await params;
     const product = await getProductBySlug(slug);

@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 interface AddToCartButtonProps {
     product: Product;
-    disabled: boolean;
+    disabled?: boolean;
 }
 
 
