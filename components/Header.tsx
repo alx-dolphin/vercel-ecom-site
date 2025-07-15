@@ -35,12 +35,12 @@ function Header() {
             </span>
           </Link>
           <ClerkLoaded>
-            {user && (
+            {/* {user && (
               <Link href="/orders" className='relative flex justify-center items-center space-x-2
                text-black font-bold py-2 px-2'>
                 <ClipboardIcon className="w-7 h-7" />
               </Link>
-            )}
+            )} */}
             {user ? (
               <div className='flex items-center space-x-2'>
                 <UserButton />
