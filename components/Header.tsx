@@ -3,7 +3,7 @@
 import { ClerkLoaded, SignInButton, UserButton, useUser } from '@clerk/nextjs';
 import Link from 'next/link';
 import Form from 'next/form'
-import { ClipboardIcon, TrolleyIcon } from '@sanity/icons'
+import { TrolleyIcon } from '@sanity/icons'
 import useCartStore from '@/app/(shop)/store';
 
 function Header() {
