@@ -4,11 +4,11 @@ import ProductThumbnail from "@/components/ProductThumbnail";
 import { Product } from "@/sanity.types";
 
 export const dynamic = "force-static";
-export const revalidate = 60; // Revalidate at most every 60 seconds
+export const revalidate = 60; // Revalidate at most every 60 seconds, in reality would probably be much higher
 
 export default async function Home() {
   const allProducts = await getAllProducts();
-  const featuredProducts = allProducts.slice(0, 5); // Take first 5 products
+  const featuredProducts = allProducts.slice(0, 5); // first 5 products
 
   return (
     <div className="min-h-screen bg-white">

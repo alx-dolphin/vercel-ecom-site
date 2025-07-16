@@ -1,12 +1,31 @@
 import { imageUrl } from "@/sanity/lib/imageUrl";
 import { getProductBySlug } from "@/sanity/lib/products/getProductBySlug";
+import { getAllProducts } from "@/sanity/lib/products/getAllProducts";
 import { PortableText } from "next-sanity";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import AddToCartButton from "@/components/AddToCartButton";
+import { Product } from "@/sanity.types";
 
-export const dynamic = "force-static";
 export const revalidate = 60; // Revalidate at most every 60 seconds
+export const dynamicParams = true; // Allow new products to be generated on-demand
+
+// Pre-generate product pages at build time for demo
+export async function generateStaticParams() {
+  try {
+    const products = await getAllProducts();
+    
+    const params = products.map((product: Product) => {
+      const slug = product.slug?.current || "";
+      return { slug };
+    });
+    
+    return params;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+}
 
 async function ProductPage({ params}: { params: Promise<{slug:string}>}) {
     const { slug } = await params;
