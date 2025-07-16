@@ -1,11 +1,7 @@
 import ProductsView from "@/components/ProductsView";
-import { getAllCategories } from "@/sanity/lib/products/getAllCategories";
-import { getProductsByCategory } from "@/sanity/lib/products/getProductsByCategory";
 
 async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const products = await getProductsByCategory(slug);
-    const categories = await getAllCategories();
 
   return (
     <div className="flex flex-col items-center justify-top min-h-screen bg-gray-100 p-4">
@@ -18,7 +14,7 @@ async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
                   .join(" ")
                 }
             </h1>
-            <ProductsView products={products} categories={categories} />
+            <ProductsView categorySlug={slug} />
         </div>
     </div>
   )

@@ -1,15 +1,22 @@
-import { Category, Product } from "@/sanity.types";
 import ProductsGrid from "./ProductsGrid";
 import { CategorySelector } from "./CategorySelector";
-import { Suspense } from "react";
-import Loader from "./Loader";
+import { getAllProducts } from "@/sanity/lib/products/getAllProducts";
+import { getAllCategories } from "@/sanity/lib/products/getAllCategories";
+import { getProductsByCategory } from "@/sanity/lib/products/getProductsByCategory";
 
 interface ProductsViewProps {
-    products: Product[];
-    categories: Category[];
+  categorySlug?: string;
 }
 
-const ProductsView = ({products, categories}: ProductsViewProps) => {
+const ProductsView = async ({ categorySlug }: ProductsViewProps = {}) => {
+  // Fetch categories - always needed
+  const categories = await getAllCategories();
+  
+  // Fetch products based on whether we have a category slug
+  const products = categorySlug 
+    ? await getProductsByCategory(categorySlug)
+    : await getAllProducts();
+
 	console.log("categories", categories);
 
   return (
@@ -22,9 +29,7 @@ const ProductsView = ({products, categories}: ProductsViewProps) => {
       {/* Products */}
     	<div className="flex-1">
         <div>
-            <Suspense fallback={<Loader />}>
-              <ProductsGrid products={products} />
-            </Suspense>
+            <ProductsGrid products={products} />
             {/* <hr className="w-1/2 sm:w-3/4"/> */}
         </div>
     	</div>

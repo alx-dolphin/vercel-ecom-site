@@ -1,10 +1,11 @@
+import Loader from "@/components/Loader";
 import ProductsView from "@/components/ProductsView";
-import { getAllCategories } from "@/sanity/lib/products/getAllCategories";
-import { getAllProducts } from "@/sanity/lib/products/getAllProducts";
+import { Suspense } from "react";
+
+export const dynamic = "force-static";
+export const revalidate = 900; // 15 minutes
 
 export default async function ProductsPage() {
-  const products = await getAllProducts();
-  const categories = await getAllCategories();
   
   return (
     <div>
@@ -13,7 +14,9 @@ export default async function ProductsPage() {
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Our Products</h1>
           <p className="text-gray-600">Discover our complete range of premium gym equipment and fitness accessories</p>
         </div>
-        <ProductsView products={products} categories={categories} />
+        <Suspense fallback={<Loader />}>
+          <ProductsView/>
+        </Suspense>
       </div>
     </div>
   );

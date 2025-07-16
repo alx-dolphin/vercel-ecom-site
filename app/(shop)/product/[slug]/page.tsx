@@ -7,7 +7,7 @@ import Image from "next/image";
 import AddToCartButton from "@/components/AddToCartButton";
 import { Product } from "@/sanity.types";
 
-export const revalidate = 60; // Revalidate at most every 60 seconds
+export const revalidate = 900; // Revalidate at most every 15 mins
 export const dynamicParams = true; // Allow new products to be generated on-demand
 
 // Pre-generate product pages at build time for demo

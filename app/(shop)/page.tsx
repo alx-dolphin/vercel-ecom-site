@@ -4,7 +4,7 @@ import ProductThumbnail from "@/components/ProductThumbnail";
 import { Product } from "@/sanity.types";
 
 export const dynamic = "force-static";
-export const revalidate = 60; // Revalidate at most every 60 seconds, in reality would probably be much higher
+export const revalidate = 900; // Revalidate at most every 15 smins, in reality would probably be much higher (make 15 minutes, then discuss future progress (on deman))
 
 export default async function Home() {
   const allProducts = await getAllProducts();
