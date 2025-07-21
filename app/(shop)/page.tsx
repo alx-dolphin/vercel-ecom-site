@@ -1,14 +1,12 @@
 import Link from "next/link";
-import { getAllProducts } from "@/sanity/lib/products/getAllProducts";
-import ProductThumbnail from "@/components/ProductThumbnail";
-import { Product } from "@/sanity.types";
+import FeaturedProducts from "@/components/FeaturedProducts";
+import { Suspense } from "react";
+import ProductSkeleton from "@/components/ProductSkeleton";
 
+export const experimental_ppr = true;
 export const dynamic = "force-static";
-export const revalidate = 900; // Revalidate at most every 15 smins, in reality would probably be much higher (make 15 minutes, then discuss future progress (on deman))
 
-export default async function Home() {
-  const allProducts = await getAllProducts();
-  const featuredProducts = allProducts.slice(0, 5); // first 5 products
+export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
@@ -51,8 +49,12 @@ export default async function Home() {
               View All Products
             </Link>
           </div>
+          {/* Featured Products */}
+          <Suspense fallback={<ProductSkeleton count={5} />}>
+            <FeaturedProducts />
+          </Suspense>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {featuredProducts.map((product: Product, index: number) => (
               <div 
                 key={product._id} 
@@ -61,7 +63,7 @@ export default async function Home() {
                 <ProductThumbnail product={product} />
               </div>
             ))}
-          </div>
+          </div> */}
           
           {/* Mobile button - centered and shown only on mobile */}
           <div className="flex justify-center mt-8 sm:hidden">
@@ -73,11 +75,11 @@ export default async function Home() {
             </Link>
           </div>
           
-          {featuredProducts.length === 0 && (
+          {/* {featuredProducts.length === 0 && (
             <div className="text-center py-12">
               <p className="text-gray-600">No products available at the moment.</p>
             </div>
-          )}
+          )} */}
         </div>
       </section>
 
